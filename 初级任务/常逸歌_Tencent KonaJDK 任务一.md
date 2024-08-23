@@ -20,15 +20,19 @@
 
 使用Ubuntu22.04虚拟机进行测试：内存8G，处理器为8。
 
-<img src="C:\Users\25623\AppData\Roaming\Typora\typora-user-images\image-20240821222854646.png" alt="image-20240821222854646" style="zoom:80%;" />
+![](https://jsd.onmicrosoft.cn/gh/kaxiya1021/tuchuang@main/img/image-20240821222854646.png)
 
 下载**[TencentKona-17.0.11](https://github.com/Tencent/TencentKona-17/releases/tag/TencentKona-17.0.11)**源码进行编译，`bash configure` 后可以看到 `JVM feature` 部分默认开启 `shenandoahgc`
 
-![bash configure构建结果启用shenando](C:\Users\25623\Desktop\bash configure构建结果启用shenando.png)
+![](https://jsd.onmicrosoft.cn/gh/kaxiya1021/tuchuang@main/img/image-20240823135820178.png)
 
-执行 `make images` 构建镜像后查看镜像版本，为TencentKona-17.0.11，证明镜像构建成功
+执行 `make images` 构建镜像
 
-![镜像构建成功](C:\Users\25623\Desktop\镜像构建成功.png)
+![](https://jsd.onmicrosoft.cn/gh/kaxiya1021/tuchuang@main/img/image-20240823141303718.png)
+
+查看镜像版本，为TencentKona-17.0.11，证明镜像构建成功
+
+![](https://jsd.onmicrosoft.cn/gh/kaxiya1021/tuchuang@main/img/image-20240823141413891.png)
 
 `make clean` 后重新进行 `bash configure`，不过这次禁用 `ShenandoahGC`
 
@@ -38,9 +42,7 @@ bash configure --with-jvm-features="-shenandoahgc"
 
 编译完成后查看 `JVM feature` ，可以看到此时 `shenandoahgc`没有开启
 
-<img src="C:\Users\25623\Desktop\禁用shenado.png" alt="禁用shenado" style="zoom: 50%;" />
-
-
+![](https://jsd.onmicrosoft.cn/gh/kaxiya1021/tuchuang@main/img/image-20240823141527078.png)
 
 ## 测试用例和日志分析
 
